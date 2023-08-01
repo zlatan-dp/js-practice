@@ -2,15 +2,14 @@ const resultElement = document.getElementById('result');
 const input1 = document.getElementById('input1');
 const input2 = document.getElementById('input2');
 const submitBtn = document.getElementById('submit');
-const plusBtn = document.getElementById('plus');
-const minusBtn = document.getElementById('minus');
-const multiplyBtn = document.getElementById('multiply');
-const divideBtn = document.getElementById('divide');
+
+let action = '+';
 
 const buttonContainer = document.getElementById('buttonContainer');
 
 function addBorder(event) {
   const targetButton = event.target;
+  action = targetButton.textContent;
 
   if (targetButton.classList.contains('btn')) {
     const buttons = buttonContainer.querySelectorAll('.btn');
@@ -22,25 +21,6 @@ function addBorder(event) {
 }
 
 buttonContainer.addEventListener('click', addBorder);
-
-let action = '+';
-
-plusBtn.onclick = function () {
-  action = '+';
-  plusBtn.style.borderColor = 'white';
-};
-
-minusBtn.onclick = function () {
-  action = '-';
-};
-
-multiplyBtn.onclick = function () {
-  action = '*';
-};
-
-divideBtn.onclick = function () {
-  action = '/';
-};
 
 function printResult(result) {
   if (result < 0) {
