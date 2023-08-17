@@ -11,13 +11,11 @@ function addBorder(event) {
   const targetButton = event.target;
   action = targetButton.textContent;
 
-  if (targetButton.classList.contains('btn')) {
-    const buttons = buttonContainer.querySelectorAll('.btn');
-    buttons.forEach(button => {
-      button.style.border = 'none';
-    });
-    targetButton.style.border = '2px solid white';
-  }
+  const buttons = buttonContainer.querySelectorAll('.btn');
+  buttons.forEach(button => {
+    button.style.border = 'none';
+  });
+  targetButton.style.border = '2px solid white';
 }
 
 buttonContainer.addEventListener('click', addBorder);
