@@ -2,8 +2,10 @@ const resultElement = document.getElementById('result');
 const input1 = document.getElementById('input1');
 const input2 = document.getElementById('input2');
 const submitBtn = document.getElementById('submit');
+const resetBtn = document.getElementById('reset');
 
-let action = '+';
+let action = '';
+resultElement.textContent = 0;
 
 const buttonContainer = document.getElementById('buttonContainer');
 
@@ -44,6 +46,27 @@ function computeNumbersWithAction(inp1, inp2, actionSymbol) {
 }
 
 submitBtn.onclick = function () {
+  if (input1.value === '') {
+    alert('Введіть 1 число');
+    return;
+  }
+
+  if (input2.value === '') {
+    alert('Введіть 2 число');
+    return;
+  }
+
   const result = computeNumbersWithAction(input1, input2, action);
+  if (action === '') {
+    alert('Оберіть дію!');
+    return;
+  }
+
   printResult(result);
+};
+
+resetBtn.onclick = function () {
+  resultElement.textContent = 0;
+  input1.value = '';
+  input2.value = '';
 };
