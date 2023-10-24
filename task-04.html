@@ -11,19 +11,22 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <title>Task 03. Arrays and function</title>
+    <title>Task 04. Time and Date</title>
   </head>
   <body class="bg-dark text-light">
     <a href="index.html">back to main</a>
-    <h1>Task 03. Arrays and function</h1>
+    <h1>Task 04. Time and Date</h1>
     <div class="container w-50 pt-5">
-      <h2>Нотатки</h2>
-      <input type="text" class="form-control mb-2" placeholder="Введіть назву" id="title" />
-      <button class="btn btn-outline-info w-100 mb-2" id="create">Додати</button>
-
-      <ul class="list-group list-group-flush" id="list"></ul>
+      <div class="text-bg-light p-3 text-center rounded">
+        <h3 id="output">13:13:13</h3>
+        <div class="d-flex mb-2 justify-content-around">
+          <button class="btn btn-small btn-primary" id="full">Повна</button>
+          <button class="btn btn-small btn-success" id="date">Дата</button>
+          <button class="btn btn-small btn-danger" id="time">Час</button>
+        </div>
+      </div>
     </div>
 
-    <script src="js/task-03.js"></script>
+    <script src="js/task-04.js"></script>
   </body>
 </html>
